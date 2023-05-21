@@ -7,7 +7,7 @@ html {
 }
 
 .card {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 rounded-lg overflow-hidden;
 }
 
 .cardIconsContainer {

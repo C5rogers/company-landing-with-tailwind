@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body class="font-Roboto relative flex flex-col gap-10">
@@ -18,8 +19,8 @@
     w-full 
     h-96 
     overflow-hidden 
-    rounded-br-full
-    shadow-lg
+    md:rounded-br-full
+    md:shadow-lg
     shadow-slate-500
     ">
         <!-- the image container -->
@@ -35,7 +36,8 @@
           right-0
            bottom-0
            bg-header-background
-           px-32
+           px-10
+           md:px-32
            flex
            flex-col
            gap-10
@@ -55,13 +57,80 @@
                 <div>
                     <a href="/">
                         <h1 class="
-                        text-4xl 
+                        text-2xl
+                        md:text-4xl 
                         text-gray-200
                         drop-shadow-lg
                         "> <i class="fa fa-quidditch-broom-ball"></i> C5rogers</h1>
                     </a>
                 </div>
-                <nav>
+                <!-- the menu button -->
+                <div class="md:hidden">
+                    <button id="menu"><i class="fa-solid fa-bars"></i></button>
+                </div>
+                <nav class="absolute top-0 -right-full bg-gray-300 py-10 px-10 w-full transition duration-500  md:hidden z-10 " id="nav">
+                    <div class=" absolute left-1 -top-2 text-black md:hidden">
+                        <button id="exit" class="text-4xl font-light">&times;</button>
+                    </div>
+                    <ul class="
+                    flex
+                    flex-col
+                    gap-5
+                    text-black
+                    ">
+                        <li>
+                            <a href="#" class="
+                            font-bold
+                            py-2
+                            px-4
+                            border-l-4
+                            border-red-700
+                            text-xs
+                            ">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="
+                            py-2 px-4
+                            border-l-4
+                            hover:font-bold 
+                            hover:border-red-700
+                            border-transparent
+                            transition-all 
+                            duration-150
+                            ease-out
+                            text-xs
+                            ">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="
+                            py-2 px-4
+                            border-l-4
+                            hover:font-bold 
+                            hover:border-red-700
+                            border-transparent
+                            transition 
+                            ease-out
+                            duration-150
+                            text-xs
+                            ">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="
+                            py-2 px-4
+                            border-l-4
+                            hover:font-bold 
+                            hover:border-red-700
+                            hover:bg-gradient-to-r
+                            border-transparent
+                            transition 
+                            ease-out
+                            duration-150
+                            text-xs
+                            ">Paying</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class=" hidden md:block ">
                     <ul class="
                     flex
                     gap-5
@@ -129,7 +198,8 @@
             ">
                 <!-- the content container -->
                 <div class="
-                w-2/3
+                w-full
+                md:w-2/3
                 flex
                 self-center
                 flex-col
@@ -190,18 +260,21 @@
         <!-- the upper container -->
         <div class="
         flex
+        flex-col
         gap-10
         justify-center
         items-center
-        px-32
+        px-10
+        md:px-32
+        md:flex-row
         ">
             <!-- the left container -->
             <div class="
-            w-1/2
             flex
             flex-col
             gap-4
-            ">
+            md:w-1/2
+            " data-aos="fade-right">
                 <div>
                     <h2 class="
                     text-gray-800
@@ -241,12 +314,13 @@
 
             <!-- the right container -->
             <div class="
+            w-3/4
             flex
             justify-center
             items-center
-            w-1/2
+            md:w-1/2
             overflow-hidden
-            ">
+            " data-aos="fade-left">
                 <img src="./image/image4.jpg" class="w-full h-56 object-cover" alt="">
             </div>
         </div>
@@ -254,23 +328,29 @@
         <!-- the second div -->
         <div class="
         flex
+        flex-col
         justify-center
         items-center
-        px-32
         bg-gray-100
-        ">
+        px-10
+        md:flex-row
+        md:px-32
+        " data-aos="fade-right">
             <div class="
             w-full
+            flex-col
             flex
             justify-center
             items-center
             gap-10
             py-10
+            md:flex-row
             ">
                 <div class="
-                w-1/2
+                w-full
+                md:w-1/2
                 relative
-                ">
+                " data-aos="fade-up">
                     <img src="./image/image3.jpg" class="
                     w-full
                     " alt="">
@@ -291,13 +371,14 @@
 
                 <!-- the articles -->
                 <div class="
-                w-1/2
+                w-full
+                md:w-1/2
                 flex
                 flex-col
                 gap-3
                 text-sm
                 text-gray-500
-                ">
+                " data-aos="fade-up">
                     <article>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim optio, suscipit tempore atque laudantium quos voluptatem dignissimos odio deserunt fuga illum aliquid, voluptate quis maiores nostrum. Reprehenderit reiciendis modi voluptatibus sed? Beatae
@@ -318,19 +399,21 @@
 
         <!-- the third div -->
         <div class="
-        px-32
+        px-10
+        sm:px-32
         ">
             <!-- the grid container -->
             <div class="
             grid
-            grid-cols-3
+            grid-cols-1
+            md:grid-cols-3
             gap-10
             ">
 
                 <!-- the card component -->
                 <div class="
                 card
-                ">
+                " data-aos="fade-down">
                     <!-- the icon -->
                     <div class="
                     cardIconsContainer
@@ -347,7 +430,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum dolor rem quaerat amet et eos, quas quo hic commodi assumenda quis? Ipsa inventore alias ipsum, dolore distinctio labore velit.</p>
                     </article>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-down">
                     <!-- the icon -->
                     <div class="cardIconsContainer">
                         <i class="fa-solid fa-cart-flatbed text-blue-500"></i>
@@ -360,7 +443,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum dolor rem quaerat amet et eos, quas quo hic commodi assumenda quis? Ipsa inventore alias ipsum, dolore distinctio labore velit.</p>
                     </article>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-down">
                     <!-- the icon -->
                     <div class="cardIconsContainer">
                         <i class="fa-solid fa-car-crash text-blue-500"></i>
@@ -373,7 +456,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum dolor rem quaerat amet et eos, quas quo hic commodi assumenda quis? Ipsa inventore alias ipsum, dolore distinctio labore velit.</p>
                     </article>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up">
                     <!-- the icon -->
                     <div class="cardIconsContainer">
                         <i class="fa-solid fa-podcast text-blue-500 "></i>
@@ -386,7 +469,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum dolor rem quaerat amet et eos, quas quo hic commodi assumenda quis? Ipsa inventore alias ipsum, dolore distinctio labore velit.</p>
                     </article>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up">
                     <!-- the icon -->
                     <div class="cardIconsContainer">
                         <i class="fa-solid fa-network-wired text-blue-500"></i>
@@ -399,7 +482,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum dolor rem quaerat amet et eos, quas quo hic commodi assumenda quis? Ipsa inventore alias ipsum, dolore distinctio labore velit.</p>
                     </article>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up">
                     <!-- the icon -->
                     <div class="cardIconsContainer">
                         <i class="fa-solid fa-thermometer-three-quarters text-blue-500"></i>
@@ -431,14 +514,17 @@
             rounded-lg
             shadow-lg
             flex
+            flex-col
             justify-between
             gap-10
             -m-20
+            md:flex-row
             items-center
-            ">
+            " data-aos="fade-left">
                 <!-- the left -->
                 <div class="
-                w-72
+                w-40
+                md:w-72
                 ">
                     <h4 class="
                     capitalize
@@ -471,7 +557,8 @@
 
         <!-- the sixth div -->
         <div class="
-        px-32
+        px-10
+        md:px-32
         flex
         flex-col
         gap-5
@@ -483,12 +570,13 @@
                 font-bold
                 text-2xl
                 text-gray-800
-                ">Lorem ipsum dolor, sit amet consectetur adipisicing.</h1>
+                " data-aos="fade-up">Lorem ipsum dolor, sit amet consectetur adipisicing.</h1>
             </div>
             <!-- the grid component -->
             <div class="
             grid
-            grid-cols-3
+            grid-cols-1
+            md:grid-cols-3
             gap-10
             ">
                 <!-- the grid cards -->
@@ -496,7 +584,7 @@
                 flex
                 flex-col
                 gap-5
-                ">
+                " data-aos="fade-up">
                     <!-- the image -->
                     <div>
                         <img src="./image/image1.jpg" alt="">
@@ -549,7 +637,7 @@
                 flex
                 flex-col
                 gap-5
-                ">
+                " data-aos="fade-down">
                     <!-- the image -->
                     <div>
                         <img src="./image/image2.jpg" alt="">
@@ -596,7 +684,7 @@
                 flex
                 flex-col
                 gap-5
-                ">
+                " data-aos="fade-up">
                     <!-- the image -->
                     <div>
                         <img src="./image/image3.jpg" alt="">
@@ -645,53 +733,60 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="
+    w-full
+    px-10
+    md:px-32
+    py-5
+    bg-blue-900
+    text-white
+    " data-aos="fade-up">
 
         <!-- the footer container -->
-        <div>
+        <div class="flex flex-col gap-5 justify-center mt-5">
             <!-- the left logo -->
             <div>
-                <a href="#">
-                    <h2><i class="fa fa-quidditch-broom-ball"></i> <span>C5rogers</span></h2>
+                <a href="#" class="font-bold text-3xl">
+                    <h2 class="drop-shadow-lg"><i class="fa fa-quidditch-broom-ball"></i> <span>C5rogers</span></h2>
                 </a>
             </div>
             <!-- the grid container -->
-            <div>
+            <div class="border-b py-10">
                 <!-- the main grid container -->
-                <div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-center ">
                     <!-- the cards -->
                     <div>
                         <div>
-                            <h3>Lorem, ipsum dolor.</h3>
+                            <h3 class="font-bold text-lg pb-2">Lorem, ipsum dolor.</h3>
                         </div>
-                        <div>
+                        <div class="text-xs">
                             <a href="#">Lorem ipsum dolor sit.</a>
                             <a href="#">Lorem ipsum dolor sit amet consectetur.</a>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <h3>Lorem, ipsum dolor.</h3>
+                            <h3 class="font-bold text-lg pb-2">Lorem, ipsum dolor.</h3>
                         </div>
-                        <div>
+                        <div class="text-xs">
                             <a href="#">Lorem ipsum dolor sit.</a>
                             <a href="#">Lorem ipsum dolor sit amet consectetur.</a>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <h3>Lorem, ipsum dolor.</h3>
+                            <h3 class="font-bold text-lg pb-2">Lorem, ipsum dolor.</h3>
                         </div>
-                        <div>
+                        <div class="text-xs">
                             <a href="#">Lorem ipsum dolor sit.</a>
                             <a href="#">Lorem ipsum dolor sit amet consectetur.</a>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <h3>Lorem, ipsum dolor.</h3>
+                            <h3 class="font-bold text-lg pb-2">Lorem, ipsum dolor.</h3>
                         </div>
-                        <div>
+                        <div class="text-xs">
                             <a href="#">Lorem ipsum dolor sit.</a>
                             <a href="#">Lorem ipsum dolor sit amet consectetur.</a>
                         </div>
@@ -700,47 +795,47 @@
             </div>
 
             <!-- the bottome discription -->
-            <div>
+            <div class="flex flex-col md:flex-row gap-10  md:gap-0 justify-between items-center text-gray-200">
                 <!-- the left -->
                 <div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, aperiam.</p>
                 </div>
                 <!-- the right -->
-                <div>
+                <div class="text-sm">
                     <p>Lorem, ipsum dolor.</p>
                 </div>
             </div>
 
             <!-- the bottom navigation -->
-            <div>
+            <div class="flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center">
                 <nav>
-                    <ul>
+                    <ul class="flex items-center gap-5">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out">Home</a>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out">About</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out">Contact</a>
                         </li>
                         <li>
-                            <a href="#">Paying</a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out">Paying</a>
                         </li>
                     </ul>
                 </nav>
                 <!-- the icons -->
                 <div>
-                    <ul>
+                    <ul class="flex items-center gap-4">
                         <li>
-                            <a href="#"><i class="fa-brands fa-discord"></i></a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out hover:shadow-lg"><i class="fa-brands fa-discord"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out hover:shadow-lg"><i class="fa-brands fa-github"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-yellow-500 transition duration-150 ease-out hover:shadow-lg"><i class="fa-brands fa-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -748,6 +843,14 @@
         </div>
     </footer>
 
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 500
+        });
+    </script>
 </body>
 
 </html>
